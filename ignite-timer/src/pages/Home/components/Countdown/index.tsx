@@ -5,6 +5,7 @@ import { CyclesContext } from "../../../../context/CyclesContext";
 
 
 
+
 export function Countdown() {
     const {
         activeCycle, 
@@ -20,7 +21,7 @@ export function Countdown() {
 
         if (activeCycle) {
             interval = setInterval(() => {
-                const difference = differenceInSeconds(new Date(), activeCycle.startDate)
+                const difference = differenceInSeconds(new Date(), new Date(activeCycle.startDate))
                 if (difference >= totalSeconds) {
                     markCurrentCycleAsFinished()
                     setSecondsPassed(totalSeconds)
